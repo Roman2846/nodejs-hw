@@ -28,10 +28,8 @@ export const noteIdSchema = {
 export const createNoteSchema = {
   [Segments.BODY]: Joi.object({
     title: Joi.string().trim().required(),
-    content: Joi.string().trim().allow('').default(''),
-    tag: Joi.string()
-      .valid(...TAGS)
-      .default('Todo'),
+    content: Joi.string().trim().allow(''),
+    tag: Joi.string().valid(...TAGS),
   }),
 };
 
