@@ -133,6 +133,7 @@ export const requestResetEmail = async (req, res) => {
   const template = handlebars.compile(templateSource);
 
   const html = template({
+    username: user.username,
     resetLink,
   });
 
